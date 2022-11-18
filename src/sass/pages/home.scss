@@ -39,7 +39,7 @@
       }
       .actions {
         .btn {
-          display: block; width: 100%; font-size: rem(13px); padding: rem(14px) rem(15px) rem(14px); background-color: $green; transition: .3s all ease; border: none; text-align: center; color: $white; @include icon(cart); border-radius: 8px;
+          display: block; width: 100%; font-size: rem(13px); padding: rem(14px) rem(15px) rem(14px); background-color: $green; transition: .3s all ease; border: none; text-align: center; color: $white; @include icon(cart); border-radius: 8px; font-weight: bold;
 
           &:hover, &:focus, &:active:focus { background-color: $dark-green; }
 
