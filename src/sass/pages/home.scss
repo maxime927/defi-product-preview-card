@@ -1,0 +1,52 @@
+/* ---- Home ---- */
+.home-wrap {
+  padding: rem(27px) rem(16px);
+  @include min(sm){ display: flex; height: 100vh; align-items: center; }
+
+  .product-card {
+    max-width: 600px; margin: 0 auto; border-radius: 10px; background-color: $white; overflow: hidden;
+    @include min(sm){ display: flex; }
+
+    .product-picture {
+      position: relative; height: 240px;
+      @include min(sm){ width: 50%; height: 100%; }
+
+      &::before { content:''; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: rgba($black,.15); }
+
+    }
+    .product-infos {
+      padding: rem(25px);
+      @include min(sm){ width: 50%; padding: rem(32px); }
+
+      .sub-heading {
+        color: $grey; text-transform: uppercase; margin-bottom: rem(10px); font-size: rem(13px); letter-spacing: rem(4px);
+        @include min(sm){ margin-bottom: rem(18px); }
+      }
+      h3 {
+        color: $blue; font-size: rem(30px); line-height: 1.12; letter-spacing: rem(.9px); font-family: $font-family-alt; margin-bottom: rem(15px); font-weight: bold;
+        @include min(sm){ margin-bottom: rem(23px); line-height: 1.09; }
+      }
+      p {
+        color: $grey; margin: 0 0 rem(20px); font-size: rem(14px); line-height: rem(23px);
+        @include min(sm){ margin-bottom: rem(26px); }
+      }
+      .product-prices {
+        display: flex; justify-content: flex-start; align-items: center; margin-bottom: rem(17px);
+        @include min(sm){ margin-bottom: rem(26px); }
+
+        .price { color: $green; font-size: rem(31px); font-family: $font-family-alt; font-weight: bold; }
+        .old-price { margin-left: rem(22px); font-size: rem(13px); color: $grey; text-decoration: line-through; }
+      }
+      .actions {
+        .btn {
+          display: block; width: 100%; font-size: rem(13px); padding: rem(14px) rem(15px) rem(14px); background-color: $green; transition: .3s all ease; border: none; text-align: center; color: $white; @include icon(cart); border-radius: 8px;
+
+          &:hover, &:focus, &:active:focus { background-color: $dark-green; }
+
+          &::before { display: inline-block; margin-right: rem(10px); transform: translateY(3px); font-size: 16px; }
+
+        }
+      }
+    }
+  }
+}

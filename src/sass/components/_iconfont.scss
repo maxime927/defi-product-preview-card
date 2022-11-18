@@ -1,0 +1,51 @@
+/* ---- Icons Font ---- */
+@font-face {
+  font-family: "producticon";
+  src: url('../fonts/icons/producticon.eot');
+  src: url('../fonts/icons/producticon.eot?#iefix') format('eot'),
+    url('../fonts/icons/producticon.woff2') format('woff2'),
+    url('../fonts/icons/producticon.woff') format('woff'),
+    url('../fonts/icons/producticon.ttf') format('truetype'),
+    url('../fonts/icons/producticon.svg#producticon') format('svg');
+}
+
+@mixin icon-styles {
+  font-family: "producticon", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+}
+
+%icon {
+  @include icon-styles;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+  @if $filename == cart {
+    $char: "\E001";
+  }
+
+  @return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+  &:#{$insert} {
+    @if $extend {
+      @extend %icon;
+    } @else {
+      @include icon-styles;
+    }
+    content: icon-char($filename);
+  }
+}
+
+.icon-cart {
+  @include icon(cart);
+}
